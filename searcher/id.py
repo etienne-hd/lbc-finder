@@ -26,9 +26,12 @@ class ID:
                     logger.exception("An error occurred while attempting to open the id.json file.")
         return ids
 
-    def add(self, id: str) -> bool:
-        if not id in self._ids:
-            self._ids.append(id)
+    def contains(self, id_: str) -> bool:
+        return id_ in self._ids
+
+    def add(self, id_: str) -> bool:
+        if not id_ in self._ids:
+            self._ids.append(id_)
             with open("id.json", "w") as f:
                 json.dump(self._ids[-MAX_ID:], f, indent=3)
             self._ids = self._ids[-MAX_ID:]
