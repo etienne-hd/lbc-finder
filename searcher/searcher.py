@@ -8,30 +8,30 @@ import threading
 from typing import List, Union
 
 class Searcher:
-    _HANDLER_MAX_ATTEMPTS: int = 3
-    _HANDLER_INITIAL_BACKOFF: float = 2.0
-
-    def __init__(self, searches: Union[List[Search], Search], request_verify: bool = True):
+    def __init__(self, searches: Union[List[Search], Search], request_verify: bool = True,
+            handler_max_attempts: int = 3, handler_initial_backoff: float = 2.0):
         self._searches: List[Search] = searches if isinstance(searches, list) else [searches]
         self._request_verify = request_verify
+        self._handler_max_attempts = handler_max_attempts
+        self._handler_initial_backoff = handler_initial_backoff
         self._id = ID()
 
     def _handle_with_retry(self, search: Search, ad) -> bool:
-        for attempt in range(1, self._HANDLER_MAX_ATTEMPTS + 1):
+        for attempt in range(1, self._handler_max_attempts + 1):
             try:
                 search.handler(ad, search.name)
                 return True
             except Exception:
-                if attempt == self._HANDLER_MAX_ATTEMPTS:
+                if attempt == self._handler_max_attempts:
                     logger.exception(
                         f"[{search.name}] Handler failed for ad {ad.id} after {attempt} attempts."
                     )
                     return False
 
-                delay = self._HANDLER_INITIAL_BACKOFF * (2 ** (attempt - 1))
+                delay = self._handler_initial_backoff * (2 ** (attempt - 1))
                 logger.warning(
                     f"[{search.name}] Handler failed for ad {ad.id}. "
-                    f"Retrying in {delay:.0f}s ({attempt}/{self._HANDLER_MAX_ATTEMPTS})."
+                    f"Retrying in {delay:.0f}s ({attempt}/{self._handler_max_attempts})."
                 )
                 time.sleep(delay)
         return False
