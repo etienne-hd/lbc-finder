@@ -198,4 +198,4 @@ This project is licensed under the MIT License.
 
 <a href="https://www.buymeacoffee.com/etienneh" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
-You can contact me via [Telegram](https://t.me/etienne_hd) or [Discord](https://discord.com/users/1153975318990827552) if you need help with scraping services or want to write a library.
+You can reach out to me on [Telegram](https://t.me/etienne_hd) or [Discord](https://discord.com/users/1153975318990827552) if you're looking for custom scraping services.
