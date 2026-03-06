@@ -51,7 +51,6 @@ This project uses [lbc](https://github.com/etienne-hd/lbc), an unofficial librar
 * Easy integration with notifications (Discord, Telegram, email…) via handler
 
 ## Installation
-Docker support will be added soon.
 
 Required **Python 3.9+**
 1. **Clone the repository**
@@ -63,6 +62,53 @@ Required **Python 3.9+**
     ```bash
     pip install -r requirements.txt
     ```
+
+## Docker
+
+You can run **lbc-finder** using Docker without installing Python locally.
+
+### Pull the image
+
+The easiest way is to use the prebuilt image from Docker Hub:
+
+```bash
+docker pull etiennehode/lbc-finder:latest
+```
+
+### Build locally
+
+If you prefer to build the image yourself:
+
+```bash
+docker build -t lbc-finder .
+```
+
+### Run the container
+
+```bash
+docker run -d \
+  --name lbc-finder \
+  -v lbc_data:/app/data \
+  -v $(pwd)/config.py:/app/config.py \
+  etiennehode/lbc-finder:latest
+```
+
+### Volumes
+
+Two volumes are used:
+
+| Volume           | Description                         |
+| ---------------- | ----------------------------------- |
+| `/app/config.py` | Your search configuration file      |
+| `/app/data`      | Persistent storage for detected ads |
+
+Example:
+
+```bash
+-v $(pwd)/config.py:/app/config.py
+```
+
+This mounts your local `config.py` file into the container so you can easily edit your searches without rebuilding the image.
 
 ## Configuration
 A [config.py](config.py) file is provided by default in the project, it contains a basic configuration.
