@@ -46,4 +46,5 @@ def handle(ad: lbc.Ad, search_name: str) -> None:
         "attachments": []
     }
 
-    requests.post(WEBHOOK_URL, json=payload)
+    response = requests.post(WEBHOOK_URL, json=payload)
+    response.raise_for_status()
