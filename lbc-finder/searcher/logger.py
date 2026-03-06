@@ -4,8 +4,8 @@ from datetime import datetime
 
 # File management
 timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-file_path: str = os.path.join("logs", f"log_{timestamp}.log")
-os.makedirs("logs", exist_ok=True)
+file_path: str = os.path.join("data", "logs", f"log_{timestamp}.log")
+os.makedirs(os.path.join("data", "logs"), exist_ok=True)
 
 # Config logging
 logger = logging.getLogger("lbc-finder")
