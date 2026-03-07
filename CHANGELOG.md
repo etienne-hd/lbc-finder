@@ -1,3 +1,14 @@
+## v1.1.1
+
+### Added
+- Automatic installation of Python libraries from `config/requirements.txt` when running the Docker container.
+
+### Changed
+- Moved `config.py` to `config/__init__.py` to allow multiple configuration files in Docker.
+
+### Updated
+- Discord example updated to reflect the new configuration structure.
+
 ## v1.1.0
 
 ### Added
