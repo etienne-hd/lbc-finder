@@ -1,7 +1,7 @@
 #!/bin/sh
-if [ -e requirements.txt ]
+if [ -e config/requirements.txt ]
 then
-    pip install --no-cache-dir -r requirements.txt
+    pip install --no-cache-dir -r config/requirements.txt
 fi
 
 exec "$@"
