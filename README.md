@@ -73,7 +73,7 @@ The easiest way is to use the prebuilt image from Docker Hub:
 
 ```bash
 docker pull etiennehode/lbc-finder:latest
-```
+````
 
 ### Build locally
 
@@ -89,29 +89,44 @@ docker build -t lbc-finder .
 docker run -d \
   --name lbc-finder \
   -v lbc_data:/app/data \
-  -v $(pwd)/config.py:/app/config.py \
+  -v $(pwd)/config:/app/config \
   etiennehode/lbc-finder:latest
 ```
 
 ### Volumes
 
-Two volumes are used:
-
-| Volume           | Description                         |
-| ---------------- | ----------------------------------- |
-| `/app/config.py` | Your search configuration file      |
-| `/app/data`      | Persistent storage for detected ads |
+| Path in container | Description                                                                                         |
+| ----------------- | --------------------------------------------------------------------------------------------------- |
+| `/app/config`     | Your search configuration files **and optional `requirements.txt`** for additional Python libraries |
+| `/app/data`       | Persistent storage for detected ads                                                                 |
 
 Example:
 
 ```bash
--v $(pwd)/config.py:/app/config.py
+-v $(pwd)/config:/app/config
 ```
 
-This mounts your local `config.py` file into the container so you can easily edit your searches without rebuilding the image.
+This mounts your local `config/` folder into the container so you can easily edit your searches.
+
+> **Extra Python libraries:**
+> If your configuration requires additional Python packages, create a `requirements.txt` file inside your `config/` folder.
+> The container startup script will automatically install all listed packages before running **lbc-finder**:
+
+```sh
+#!/bin/sh
+if [ -e config/requirements.txt ]
+then
+    pip install --no-cache-dir -r config/requirements.txt
+fi
+
+exec "$@"
+```
+
+This way, you can extend the container with any Python library you need without modifying the Docker image itself.
+
 
 ## Configuration
-A [config.py](config.py) file is provided by default in the project, it contains a basic configuration.
+A [config](lbc-finder/config/__init__.py) file is provided by default in the project, it contains a basic configuration.
 
 Inside this file, you must define a `CONFIG` variable, which is an list of `Search` objects.
 
