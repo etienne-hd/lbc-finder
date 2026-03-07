@@ -13,7 +13,7 @@ def handle(ad: lbc.Ad, search_name: str) -> None:
         "embeds": [
             {
                 "title": ad.title,
-                "description": f"```{ad.body}```",
+                "description": f"```{ad.body[:4087]}...```" if len(ad.body) >= 4090 else f"```{ad.body[:4090]}```",
                 "url": ad.url,
                 "color": 14381568,
                 "author": {
