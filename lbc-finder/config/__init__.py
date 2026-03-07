@@ -1,12 +1,7 @@
 from model import Search, Parameters
 import lbc
 
-def handle(ad: lbc.Ad, search_name: str):
-    print(f"[{search_name}] New ads!")
-    print(f"Title : {ad.subject}")
-    print(f"Price : {ad.price} €")
-    print(f"URL : {ad.url}")
-    print("-" * 40)
+from .handler import handle
 
 location = lbc.City( 
     lat=48.85994982004764,
