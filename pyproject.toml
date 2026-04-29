@@ -1,6 +1,6 @@
 [project]
 name = "lbc-finder"
-version = "1.1.1"
+version = "1.1.2"
 description = "Stay notified when new ads appear on Leboncoin"
 readme = "README.md"
 requires-python = ">=3.10"
