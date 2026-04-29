@@ -52,7 +52,7 @@ This project uses [lbc](https://github.com/etienne-hd/lbc), an unofficial librar
 
 ## Installation
 
-Required **Python 3.9+**
+Required **Python 3.10+**
 1. **Clone the repository**
     ```bash
     git clone https://github.com/etienne-hd/lbc-finder.git
@@ -60,7 +60,12 @@ Required **Python 3.9+**
     ```
 2. **Install dependencies**
     ```bash
-    pip install -r requirements.txt
+    pip install .
+    ```
+
+    With **uv**:
+    ```bash
+    uv sync
     ```
 
 ## Docker
