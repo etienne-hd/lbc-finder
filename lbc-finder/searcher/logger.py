@@ -10,14 +10,17 @@ os.makedirs(os.path.join("data", "logs"), exist_ok=True)
 # Config logging
 logger = logging.getLogger("lbc-finder")
 
-formatter = logging.Formatter('[%(asctime)s] [%(levelname)s] [%(threadName)s] %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+formatter = logging.Formatter(
+    "[%(asctime)s] [%(levelname)s] [%(threadName)s] %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
 stream_handler = logging.StreamHandler()
 stream_handler.setFormatter(formatter)
 logger.addHandler(stream_handler)
 logger.setLevel(logging.INFO)
 
 # Log File
-file_handler = logging.FileHandler(file_path, mode='w', encoding='utf-8')
+file_handler = logging.FileHandler(file_path, mode="w", encoding="utf-8")
 file_handler.setLevel(logging.WARNING)
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
