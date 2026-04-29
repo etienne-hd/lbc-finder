@@ -5,12 +5,19 @@ from .logger import logger
 
 import time
 import threading
-from typing import List, Union
+
 
 class Searcher:
-    def __init__(self, searches: Union[List[Search], Search], request_verify: bool = True,
-            handler_max_attempts: int = 3, handler_initial_backoff: float = 2.0):
-        self._searches: List[Search] = searches if isinstance(searches, list) else [searches]
+    def __init__(
+        self,
+        searches: list[Search] | Search,
+        request_verify: bool = True,
+        handler_max_attempts: int = 3,
+        handler_initial_backoff: float = 2.0,
+    ):
+        self._searches: list[Search] = (
+            searches if isinstance(searches, list) else [searches]
+        )
         self._request_verify = request_verify
         self._handler_max_attempts = handler_max_attempts
         self._handler_initial_backoff = handler_initial_backoff
@@ -42,10 +49,14 @@ class Searcher:
             before = time.time()
             try:
                 response = client.search(**search.parameters._kwargs, sort=Sort.NEWEST)
-                logger.debug(f"Successfully found {response.total} ad{'s' if response.total > 1 else ''}.")
+                logger.debug(
+                    f"Successfully found {response.total} ad{'s' if response.total > 1 else ''}."
+                )
                 ads = [ad for ad in response.ads if not self._id.contains(ad.id)]
                 if len(ads):
-                    logger.info(f"Successfully found {len(ads)} new ad{'s' if len(ads) > 1 else ''}!")
+                    logger.info(
+                        f"Successfully found {len(ads)} new ad{'s' if len(ads) > 1 else ''}!"
+                    )
 
                 notified = 0
                 for ad in ads:
@@ -57,15 +68,23 @@ class Searcher:
                         f"[{search.name}] {len(ads) - notified} ad{'s were' if len(ads) - notified > 1 else ' was'} not marked as seen and will be retried."
                     )
             except Exception:
-                logger.exception(f"An error occured.")
-            time.sleep(search.delay - (time.time() - before) if search.delay - (time.time() - before) > 0 else 0)
+                logger.exception("An error occured.")
+            time.sleep(
+                search.delay - (time.time() - before)
+                if search.delay - (time.time() - before) > 0
+                else 0
+            )
 
     def start(self) -> bool:
         if not len(self._searches):
-            logger.warning("No search rules have been set. Please create search rules in config.py (see example in README.md).")
+            logger.warning(
+                "No search rules have been set. Please create search rules in config.py (see example in README.md)."
+            )
             return False
 
         for search in self._searches:
-            threading.Thread(target=self._search, args=(search,), name=search.name).start()
-            time.sleep(5) # Add latency between each thread to prevent spam
+            threading.Thread(
+                target=self._search, args=(search,), name=search.name
+            ).start()
+            time.sleep(5)  # Add latency between each thread to prevent spam
         return True
