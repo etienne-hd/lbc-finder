@@ -1,0 +1,13 @@
+name: lbc-finder
+
+services:
+  lbc-finder:
+    container_name: lbc-finder
+    image: etiennehode/lbc-finder:latest
+    restart: on-failure
+    volumes:
+      - "lbc_data:/app/data"
+      - "./config:/app/config"
+
+volumes:
+  lbc_data:
