@@ -4,11 +4,11 @@ requires-python = ">=3.10"
 
 [[package]]
 name = "certifi"
-version = "2026.4.22"
+version = "2026.5.20"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/25/ee/6caf7a40c36a1220410afe15a1cc64993a1f864871f698c0f93acb72842a/certifi-2026.4.22.tar.gz", hash = "sha256:8d455352a37b71bf76a79caa83a3d6c25afee4a385d632127b6afb3963f1c580", size = 137077, upload-time = "2026-04-22T11:26:11.191Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f3/ce/ee2ecad540810a79593028e88299baeae54d346cc7a0d94b6199988b89b1/certifi-2026.5.20.tar.gz", hash = "sha256:69dea482ab64caa7b9f6aba1c6bf48bb6a5448d1c0f1b17ab42ad8c763a5344d", size = 135422, upload-time = "2026-05-20T11:46:50.073Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/22/30/7cd8fdcdfbc5b869528b079bfb76dcdf6056b1a2097a662e5e8c04f42965/certifi-2026.4.22-py3-none-any.whl", hash = "sha256:3cb2210c8f88ba2318d29b0388d1023c8492ff72ecdde4ebdaddbb13a31b1c4a", size = 135707, upload-time = "2026-04-22T11:26:09.372Z" },
+    { url = "https://files.pythonhosted.org/packages/59/8c/57e832b7af6d7c5abe66eb3fbe3a3a32f4d11ea23a1aa7131371035be991/certifi-2026.5.20-py3-none-any.whl", hash = "sha256:3c52e209ba0a4ad7aebe60436a4ab349c39e1e602e8c134221e546902ad25897", size = 134134, upload-time = "2026-05-20T11:46:48.578Z" },
 ]
 
 [[package]]
@@ -128,14 +128,14 @@ wheels = [
 
 [[package]]
 name = "lbc"
-version = "1.1.3"
+version = "1.1.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "curl-cffi" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f1/92/eaa1a5b42f3da685e61887db3c9fe3128e005d60f5e51b66a284fd0ae362/lbc-1.1.3.tar.gz", hash = "sha256:0ee7d3ad3b1f51e2b8809ab9ec11843aed20a72ef4ca14803b92dd225f434ffb", size = 15938, upload-time = "2026-04-29T12:24:15.047Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/1e/5f/4c6158e3fd002731468e0319fb76c6ae55a05c2c5ea25870d748f5d8ae88/lbc-1.1.4.tar.gz", hash = "sha256:0569520ac9f6eb97d54db2f1cae0573fea381da7bd7cddb6a1c79dc3b468b4c3", size = 15958, upload-time = "2026-06-09T21:59:20.843Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c5/9b/10e6ab730617e8736372ae2fb0bfbe1477bd01406c31737a7b55379827e7/lbc-1.1.3-py3-none-any.whl", hash = "sha256:9246a4dc3c23bd6470ca08a398c002c30afd2c43e86570a353b0cb7c3f95a32c", size = 20553, upload-time = "2026-04-29T12:24:16.667Z" },
+    { url = "https://files.pythonhosted.org/packages/87/99/b4522d47067ea353a25c9f12e53a9ecab098f07ff7428344cecbdcd2c7d1/lbc-1.1.4-py3-none-any.whl", hash = "sha256:9b38503ecc174cd7e8d59662c905f1eca7db2621e598196672afd621614dbdb7", size = 20562, upload-time = "2026-06-09T21:59:19.842Z" },
 ]
 
 [[package]]
@@ -147,18 +147,18 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "lbc", specifier = ">=1.1.3" }]
+requires-dist = [{ name = "lbc", specifier = "==1.1.4" }]
 
 [[package]]
 name = "markdown-it-py"
-version = "4.0.0"
+version = "4.2.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "mdurl" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz", hash = "sha256:cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3", size = 73070, upload-time = "2025-08-11T12:57:52.854Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz", hash = "sha256:04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49", size = 82454, upload-time = "2026-05-07T12:08:28.36Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/94/54/e7d793b573f298e1c9013b8c4dade17d481164aa517d1d7148619c2cedbf/markdown_it_py-4.0.0-py3-none-any.whl", hash = "sha256:87327c59b172c5011896038353a81343b6754500a08cd7a4973bb48c6d578147", size = 87321, upload-time = "2025-08-11T12:57:51.923Z" },
+    { url = "https://files.pythonhosted.org/packages/b3/81/4da04ced5a082363ecfa159c010d200ecbd959ae410c10c0264a38cac0f5/markdown_it_py-4.2.0-py3-none-any.whl", hash = "sha256:9f7ebbcd14fe59494226453aed97c1070d83f8d24b6fc3a3bcf9a38092641c4a", size = 91687, upload-time = "2026-05-07T12:08:27.182Z" },
 ]
 
 [[package]]

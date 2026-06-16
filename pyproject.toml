@@ -5,5 +5,5 @@ description = "Stay notified when new ads appear on Leboncoin"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "lbc>=1.1.3",
+    "lbc==1.1.4",
 ]
