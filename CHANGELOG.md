@@ -1,4 +1,10 @@
-## v1.1.2
+## 1.1.3
+
+### Changed
+
+- Bump [lbc](https://github.com/etienne-hd/lbc) version from `1.1.3` to `1.1.4`.
+
+## 1.1.2
 
 ### Added
 
@@ -9,7 +15,7 @@
 - Migrated the container build process to `uv` and removed the legacy `requirements.txt`
 - Reformatted the codebase with `ruff`
 
-## v1.1.1
+## 1.1.1
 
 ### Added
 
@@ -23,7 +29,7 @@
 
 - Discord example updated to reflect the new configuration structure.
 
-## v1.1.0
+## 1.1.0
 
 ### Added
 
@@ -34,7 +40,7 @@
 - Project source code moved to `/lbc-finder`
 - `id.json` and `logs` are now stored in `/data` for persistent storage (useful for Docker)
 
-## v1.0.1
+## 1.0.1
 
 ### Added
 
@@ -43,8 +49,8 @@
 
 ### Changed
 
-- Bumped [lbc](https://github.com/etienne-hd/lbc) to v1.1.2
+- Bumped [lbc](https://github.com/etienne-hd/lbc) to 1.1.2
 
-## v1.0.0
+## 1.0.0
 
 - Initial release
