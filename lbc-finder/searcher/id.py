@@ -1,7 +1,5 @@
-from .logger import logger
-
-import os
 import json
+import os
 
 MAX_ID: int = 10_000
 
@@ -23,10 +21,6 @@ class ID:
                     ids = json.load(f)
                 except json.JSONDecodeError:
                     os.remove(id_path)
-                except Exception:
-                    logger.exception(
-                        "An error occurred while attempting to open the id.json file."
-                    )
         return ids
 
     def contains(self, id_: str) -> bool:

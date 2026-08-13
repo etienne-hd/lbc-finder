@@ -1,10 +1,12 @@
-from model import Search
+import threading
+import time
+
+import lbc.exceptions
 from lbc import Client, Sort
+from model import Search
+
 from .id import ID
 from .logger import logger
-
-import time
-import threading
 
 
 class Searcher:
@@ -28,7 +30,7 @@ class Searcher:
             try:
                 search.handler(ad, search.name)
                 return True
-            except Exception:
+            except Exception:  # noqa: BLE001
                 if attempt == self._handler_max_attempts:
                     logger.exception(
                         f"[{search.name}] Handler failed for ad {ad.id} after {attempt} attempts."
@@ -67,13 +69,9 @@ class Searcher:
                     logger.warning(
                         f"[{search.name}] {len(ads) - notified} ad{'s were' if len(ads) - notified > 1 else ' was'} not marked as seen and will be retried."
                     )
-            except Exception:
+            except lbc.exceptions.LBCError:
                 logger.exception("An error occured.")
-            time.sleep(
-                search.delay - (time.time() - before)
-                if search.delay - (time.time() - before) > 0
-                else 0
-            )
+            time.sleep(max(0, search.delay - (time.time() - before)))
 
     def start(self) -> bool:
         if not len(self._searches):

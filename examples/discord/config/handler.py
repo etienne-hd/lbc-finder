@@ -1,12 +1,15 @@
+from datetime import datetime
+
 import lbc
 import requests
-from datetime import datetime
 
 WEBHOOK_URL: str = ...
 
 
 def handle(ad: lbc.Ad, search_name: str) -> None:
-    timestamp = datetime.strptime(ad.index_date, "%Y-%m-%d %H:%M:%S").timestamp()
+    timestamp = (
+        datetime.strptime(ad.index_date, "%Y-%m-%d %H:%M:%S").astimezone().timestamp()
+    )
 
     payload = {
         "content": None,

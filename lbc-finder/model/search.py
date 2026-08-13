@@ -1,7 +1,9 @@
-from lbc import Proxy, Ad
-from .parameters import Parameters
+from collections.abc import Callable
 from dataclasses import dataclass
-from typing import Callable
+
+from lbc import Ad, Proxy
+
+from .parameters import Parameters
 
 
 @dataclass

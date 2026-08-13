@@ -7,6 +7,7 @@
 from model import Search, Parameters
 import lbc
 
+
 def handle(ad: lbc.Ad, search_name: str):
     print(f"[{search_name}] New ads!")
     print(f"Title : {ad.subject}")
@@ -14,11 +15,12 @@ def handle(ad: lbc.Ad, search_name: str):
     print(f"URL : {ad.url}")
     print("-" * 40)
 
-location = lbc.City( 
+
+location = lbc.City(
     lat=48.85994982004764,
     lng=2.33801967847424,
-    radius=10_000, # 10 km
-    city="Paris"
+    radius=10_000,  # 10 km
+    city="Paris",
 )
 
 CONFIG = [
@@ -29,12 +31,12 @@ CONFIG = [
             locations=[location],
             category=lbc.Category.IMMOBILIER,
             square=[200, 400],
-            price=[300_000, 700_000]
+            price=[300_000, 700_000],
         ),
-        delay=60 * 5, # Check every 5 minutes 
-        handler=handle
+        delay=60 * 5,  # Check every 5 minutes
+        handler=handle,
     ),
-    ... # More
+    ...,  # More
 ]
 ```
 *lbc-finder is not affiliated with, endorsed by, or in any way associated with Leboncoin or its services. Use at your own risk.*
@@ -144,13 +146,11 @@ from model import Search, Parameters
 Search(
     name="Porsche 944",
     parameters=Parameters(
-        text="Porsche 944",
-        category=lbc.Category.VEHICULES_VOITURES,
-        price=[0, 25_000]
+        text="Porsche 944", category=lbc.Category.VEHICULES_VOITURES, price=[0, 25_000]
     ),
-    delay=60 * 5, # Every 5 minutes
+    delay=60 * 5,  # Every 5 minutes
     handler=handle,
-    proxy=None
+    proxy=None,
 )
 ```
 ### Name
@@ -175,8 +175,7 @@ It must accept two parameters:
 * the name (label) of the search (e.g. **"Porsche 944"**)
 
 ```python
-def handle(ad: lbc.Ad, search_name: str) -> None:
-    ...
+def handle(ad: lbc.Ad, search_name: str) -> None: ...
 ```
 You can find example handlers in the [examples](examples/) folder.
 
@@ -188,20 +187,9 @@ You can configure a proxy, here is an example:
 from lbc import Proxy
 from model import Search
 
-proxy = Proxy(
-    host="127.0.0.1",
-    port=9444,
-    username="etienne",
-    password="123456"
-)
+proxy = Proxy(host="127.0.0.1", port=9444, username="etienne", password="123456")
 
-Search(
-    name=...,
-    parameters=...,
-    delay=...,
-    handler=...,
-    proxy=proxy
-)
+Search(name=..., parameters=..., delay=..., handler=..., proxy=proxy)
 ```
 
 ## Usage

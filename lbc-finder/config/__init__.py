@@ -1,5 +1,5 @@
-from model import Search, Parameters
 import lbc
+from model import Parameters, Search
 
 from .handler import handle
 

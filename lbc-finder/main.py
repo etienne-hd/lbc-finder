@@ -1,5 +1,5 @@
-from searcher import Searcher
 from config import CONFIG
+from searcher import Searcher
 
 
 def main() -> None:

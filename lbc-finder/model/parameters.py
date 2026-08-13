@@ -1,6 +1,6 @@
-from lbc import Category, Region, Department, City, OwnerType
-
 from typing import overload
+
+from lbc import Category, City, Department, OwnerType, Region
 
 
 class Parameters:
@@ -8,7 +8,7 @@ class Parameters:
     def __init__(
         self,
         url: str | None = None,
-        text: str | None = None,
+        text: str | list[str] | None = None,
         category: Category = Category.TOUTES_CATEGORIES,
         locations: list[Region | Department | City]
         | Region
