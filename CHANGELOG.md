@@ -1,3 +1,9 @@
+## 1.1.4
+
+### Changed
+
+- Bump [lbc](https://github.com/etienne-hd/lbc) version from `1.1.4` to `1.1.5`.
+
 ## 1.1.3
 
 ### Changed
