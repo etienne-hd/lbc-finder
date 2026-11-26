@@ -8,11 +8,11 @@ resolution-markers = [
 
 [[package]]
 name = "certifi"
-version = "2026.10.23"
+version = "2026.11.20"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/fd/11/b524cbd9bbdaca58608e4cf4053fd463417549e1959fa8d3aa18319f9555/certifi-2026.10.23.tar.gz", hash = "sha256:a9895e6e2758b371e0545e321a3a8fd1fcfd9829ada8824a936dfb16aaaf36cd", size = 136225, upload-time = "2026-10-23T11:36:16.478Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/51/33/4cd27639502f010084bcef7a2036391dd637439901341ce1a530f36f6e51/certifi-2026.11.20.tar.gz", hash = "sha256:af1cb240a8133f105aa52684a3a3258339d7f2fd0bd4e2812698ff5cf5588c4e", size = 128901, upload-time = "2026-11-20T23:37:49.522Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/32/d1/a3652fe2c19134d0d15922177821d863cbd7e842d53a21bbe7e8e3a1b5ac/certifi-2026.10.23-py3-none-any.whl", hash = "sha256:e9b54de76e530bb6cf0ccd036787103acb58fd42ba930ea8bf948ddbaa2f61d1", size = 135082, upload-time = "2026-10-23T11:36:14.763Z" },
+    { url = "https://files.pythonhosted.org/packages/6d/39/5eec3296860b94ac20bb8ed807725b88f6adfab3f343df592afd975f5f86/certifi-2026.11.20-py3-none-any.whl", hash = "sha256:7422df25243767b9877031a2248cb14d09ddac9beee846f4cef3d5c9191d488f", size = 127913, upload-time = "2026-11-20T23:37:48.117Z" },
 ]
 
 [[package]]
@@ -170,15 +170,15 @@ wheels = [
 
 [[package]]
 name = "lbc"
-version = "1.1.8"
+version = "1.2.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "curl-cffi" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/67/73/6eb29078ae9c6d63656cff6ec5adb1e746bce1836c41a391d66c03e5985b/lbc-1.1.8.tar.gz", hash = "sha256:6476d10fcdaeb5db833070d4ffc82781c8d925a814f07a0bfa999d4dfda6657a", size = 17709, upload-time = "2026-11-01T14:20:26.887Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/5a/cf/9b5ddfe4087fbe9067d0a1e8d10d8440e86cf55d0af019bf449a8f6dcf1a/lbc-1.2.1.tar.gz", hash = "sha256:f5fca90211f902174b4d0bba6914d68813c1aa6ffb13e678c6d1798f824a0ff4", size = 17778, upload-time = "2026-11-26T18:14:00.019Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/50/38/fa321054f6fe0350a87df4e92e5dc82c5a51bff795b7393550172624af9f/lbc-1.1.8-py3-none-any.whl", hash = "sha256:161d94105d75b54624aa11d84fd9c172aba2580af829c2c7ce4d2d1cacdff6e4", size = 21177, upload-time = "2026-11-01T14:20:25.728Z" },
+    { url = "https://files.pythonhosted.org/packages/40/1c/281faf314d73aedfbd17a99bfee8903caaecf8c38cdc8b18364713aae489/lbc-1.2.1-py3-none-any.whl", hash = "sha256:2f150cc2bcf597490c7b84250027726f5dd2810b640fb28be8a81c7b5f072791", size = 21272, upload-time = "2026-11-26T18:13:59.119Z" },
 ]
 
 [[package]]
@@ -190,7 +190,7 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "lbc", specifier = "==1.1.8" }]
+requires-dist = [{ name = "lbc", specifier = "==1.2.1" }]
 
 [[package]]
 name = "pycparser"
